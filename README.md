@@ -6,13 +6,12 @@ Kickoff CSS to the rescue, ingedeeld in groepjes en een onderwerp gekregen, met 
 
 Hoe lang duurde het? 
 de hele dag aan CSS experimenten gewerkt en presentatie gemaakt.
+![alt text](<Scherm­afbeelding 2026-02-19 om 15.17.04.png>)
 
 Wat heb ik geleerd? 
 Hoe brighter colors werken met display-p3 en met hsl kleuren.
-
-
 Wat ga ik morgen doen?
-Preseneteren, kickoff eindproject css
+Presenteren, kickoff eindproject css
 
 ## Do 19 feb
 wat heb ik vandaag gedaan? 
@@ -22,7 +21,7 @@ Hoe lang duurde het?
 Presentaties van 9:30-12, 13:00 begon de kickoff en om 14:00 ben ik begonnen met het eindproject.
 
 Wat heb ik geleerd? 
-Verschillende CSS 
+Nieuwe CSS code aan de hand van de presentaties
 
 
 Wat ga ik morgen doen?
