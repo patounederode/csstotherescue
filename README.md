@@ -26,7 +26,7 @@ Verschillende CSS
 
 
 Wat ga ik morgen doen?
-Morgenmiddag voortgang bespreken en verder werken
+Onderwerp kiezen, ideeën bespreken in voortganggesprek
 
 
 ## Vrij 20 feb
