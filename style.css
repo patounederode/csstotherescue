@@ -1,0 +1,636 @@
+:root {
+  --timeofday:linear-gradient(to top, hsl(211, 53%, 11%), #1b263b, #415a77, #778da9); 
+  color-scheme: light dark;
+   --color-text:white;
+  --background-color: light-dark(hsl(240, 16%, 12%),hsl(240, 16%, 12%));
+  --box-shadow: light-dark(hsl(36, 100%, 65%), hsl(35, 100%, 64%));
+--bg-color:hsl(240, 16%, 12%);
+--panel-color:light-dark(hsla(240, 7%, 53%, 0.611), hsl(240, 9%, 22%));
+--controls: light-dark(lightpink, hotpink);
+--zonopkomst: linear-gradient(to top, hsl(358, 100%, 80%), hsl(319, 96%, 90%), hsl(202, 100%, 88%));
+--ochtend: linear-gradient(to top, hsl(184, 98%, 77%), hsl(215, 100%, 70%));
+--middag: linear-gradient(to top, hsl(197, 71%, 73%), hsl(208, 99%, 65%));
+--namiddag:linear-gradient(to top, hsl(34, 100%, 79%), hsl(35, 100%, 64%), hsl(346, 100%, 76%));
+--avond: linear-gradient(to top, hsl(20, 100%, 70%), hsl(359, 100%, 68%), hsl(280, 41%, 42%));
+--nacht: linear-gradient( to top,hsl(226, 51%, 8%), hsl(224, 62%, 15%), hsl(220, 46%, 20%), hsl(221, 40%, 29%), hsl(224, 29%, 42%)); 
+
+  font-family: sans-serif;
+}
+
+
+
+/* @fontface */
+
+
+body {
+  background:var (--background-color);
+  display: flex; 
+   margin-top: 10%;
+  justify-content: center;
+  align-content: cente
+
+}
+
+h1 {
+color:var(--color-text);
+  display: flex;
+  justify-self: center;
+}
+
+/* panel */
+body > div:first-of-type {
+  background-color: var(--panel-color);
+  border-radius: 1em;
+  padding: 2em;
+  width: 45em;
+   transition: width 1s ease;
+
+  box-shadow: 0 5px 15px hsla(0, 0%, 0%, 0.5); /* X Y Blur Color */
+  box-shadow: inset 0 4px 8px rgba(227, 227, 227, 0.6);
+}
+
+
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+  position: relative;
+  height: 17em;
+  border-radius: 1em;
+  background: var(--middag);
+  box-shadow: inset 0 4px 8px rgba(221, 221, 221, 0.6);
+
+  /* animatie lucht */
+  animation: sky-gradient 6s infinite alternate;
+}
+
+
+
+/* sun */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  position: absolute;
+  padding: 0;
+  bottom: 0.5em;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  box-shadow: none;
+  filter: blur(1px);
+  transform: translateX(-50%);
+
+
+
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/translateX */
+  border-radius: 100%;
+  background: hsl(48, 100%, 62%);
+
+}
+
+
+/* bron WOLK: https://codepen.io/Arsinae/pen/vPJgeQ*/
+
+
+/* clouds container */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2) {
+  position: relative;
+  width: 50%;
+  margin: 0.5em;
+
+  /* animatie wolk */
+  animation-name: --wolk;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  
+}
+
+/* alle cloud delen */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div {
+  position: absolute;
+  background: white;
+  border-radius: 4em;
+  display: none;
+  filter: blur(1px);
+}
+
+
+@keyframes --wolk {
+  0% {
+    transform: translateX(0) scale(0.5);
+  }
+
+  50% {
+    transform: translateX(9em) scale(0.5);
+
+  }
+
+  100% {
+    transform: translateX(0) scale(0.5);
+  }
+}
+
+
+/*****  WOLKEN scherm kleiner dan 40em; *****/
+@media (width < 40em) {
+
+/* onderste wolkdeel */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  top: 4em;
+  right: 1em;
+  width: 15em;
+  height: 5em;
+  z-index: 1;
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 80%));
+}
+
+/* linker bol van de wolk */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(2) {
+  top: 1.2em;
+  width: 6em;
+  height: 6em;
+  right: 50%;
+}
+
+/* rechter bol */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(3) {
+  top: 0.5em;
+  right: 20%;
+  width: 6em;
+  height: 6em;
+}
+} 
+/* ***** WOLKEN KLEINER DAN 40em****** */
+
+
+
+/*WOLKEN GROTER DAN 40EM */
+@media (width > 40em) {
+
+
+/* onderste wolkdeel */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  top: 4em;
+  right: 1em;
+  width: 19em;
+  height: 6em;
+  z-index: 1;
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 80%));
+}
+
+/* linker bol van de wolk */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(2) {
+  top: 1.2em;
+  width: 7em;
+  height: 7em;
+  right: 50%;
+}
+
+/* rechter bol */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(3) {
+  top: 0.5em;
+  right: 20%;
+  width: 8em;
+  height: 8em;
+}
+} 
+
+
+/***** WOLKEN kleiner DAN 30em *****/
+@media (width < 30em) {
+/* onderste wolkdeel */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  width: 13em;
+    transform: scale(0.2);
+}
+}
+/********/
+/***** WOLKEN kleiner DAN 30em *****/
+@media (width < 0em) {
+/* onderste wolkdeel */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  width: 100em;
+    transform: scale(0.2);
+}
+}
+/********/
+
+
+/* golden hour button */
+label:has(input[value="goldenhour"]) {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 5.7em;
+  height: 0.6em;
+  padding: 1em;
+  background: var(--box-shadow);
+  border-radius: 2em;
+  box-shadow: inset 0 4px 8px hsl(20, 100%, 92%);
+  cursor: pointer;
+
+  &:hover {
+ box-shadow:  0 1px 8px hsl(20, 100%, 92%); ;
+}
+
+
+
+}
+
+/* golden hour button */
+label:has(input[value="goldenhour"]) input {
+ display: none;
+  
+}
+
+
+
+/* goldenhour button */
+label:has(input[value="goldenhour"]:checked) {
+  background-color: hsl(19, 100%, 55%);
+    box-shadow: 0 0 1em hsl(19, 100%, 55%);
+
+}
+
+/* alle labels */
+label {
+  accent-color:var(--controls);
+  color: var(--color-text);
+  font-size: 1.2em;
+  padding-top:1em;
+
+}
+
+/* timeofday range */
+label:nth-of-type(1) {
+display: flex;
+}
+
+/* range slider */
+label:nth-of-type(1) input {
+  width: 100%;
+}
+
+/* 3 controls */
+
+
+span label {
+  display: grid;
+  justify-self: center;
+  align-items: center;
+  border-radius: 2em;
+  height: 1em;
+  padding-block: 0.6em;
+  padding-inline: 0.8em;
+  background:var(--panel-color) ;
+  box-shadow: inset 1px 4px 8px hsla(20, 100%, 92%, 0.539);
+
+  &:hover {
+      box-shadow:  0px 1px 8px hsla(20, 100%, 92%, 0.539);
+  }
+} 
+
+
+
+/* power checkbox input */
+span label input {
+display: none;
+} 
+
+/* drie controls */
+span {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  padding-block: 2.5em;
+
+}
+
+/* controls onder elkaar */
+@media (width < 40em) {
+span {
+  padding-inline:1em ;
+  /* flex-direction: column; */
+  gap: 1em;
+}
+
+body{
+  transform: scale(0.7);
+  transition: 1s;
+}
+}
+
+
+/* sterren img */
+img {
+  display: none;
+}
+
+
+/* stars */
+html:has([value="stars"]:checked) img {
+  display: block;
+  justify-self: center;
+
+}
+
+html:has([value="stars"]:checked) span label:nth-of-type(1){
+  background-color: var(--controls);
+
+}
+
+/* clouds uit */
+html:has([value="clouds"]:checked) div:nth-of-type(1) > div:nth-of-type(1)>div:nth-of-type(2)>div {
+  display:block;
+}
+
+/* 6:00 */
+@container style(--timeofday >= 6) {
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+ background: var(--zonopkomst);
+  transition: opacity 1s;
+ 
+}
+/* sun positie */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  bottom: 0.5em;
+  transition: 1s;
+}
+
+/* sun color */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  background: oklch(65.272% 0.23543 33.869);
+box-shadow: 0 0 2em oklch(64.377% 0.24312 32.118 / 0.6);}
+
+/* onderste wolkdeel gradient*/
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(359, 100%, 90%));
+}
+}
+
+/* 9:00 */
+@container style(--timeofday >= 9) {
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+ background: var(--ochtend);
+   opacity: 1;
+   transition: opacity 1s;
+}
+/* sun positie */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  bottom: 10em;
+}
+
+/* sun color */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  background:  oklch(90.968% 0.14393 95.12);
+    box-shadow: 0 0 3em hsla(51, 100%, 79%, 0.7);
+}
+
+/* onderste wolkdeel gradient*/
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(198, 100%, 85%));
+}
+
+}
+
+
+/* 12:00 */
+@container style(--timeofday >= 12) {
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+ background: var(--middag);
+    opacity: 1;
+   transition: opacity 1s;
+}
+/* sun positie */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  bottom: 12em;
+  transition: 1s;
+}
+
+/* sun color */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  background:  hsl(54, 100%, 73%);
+  box-shadow: 0 0 3em hsla(51, 100%, 79%, 0.7);
+}
+
+/* onderste wolkdeel gradient*/
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(197, 71%, 73%));
+}
+}
+
+
+
+
+/* 15:00 */
+@container style(--timeofday >= 15) {
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+ background: var(--namiddag);
+
+}
+/* sun positie */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  bottom: 8em;
+  transition: 1s;
+}
+
+/* sun color */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  background:  hsl(35, 100%, 60%);
+}
+
+/* onderste wolkdeel gradient*/
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  background: linear-gradient(#ffffff, hsl(35, 84%, 70%));
+}
+}
+
+
+
+
+/* 18:00 */
+@container style(--timeofday >= 18) {
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+ background: var(--avond);
+}
+
+
+/* sun positie */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  bottom: 0.5em;
+  transition: 2s;
+}
+
+/* sun color */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  background:  oklch(69.276% 0.20404 40.696);
+box-shadow: 
+  0 0 1em oklch(69.276% 0.20404 40.696 / 0.5),
+}
+
+/* onderste wolkdeel gradient */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  background: linear-gradient(#ffffff, oklch(77.735% 0.12049 18.878));
+}
+
+}
+
+
+html:has([value="clouds"]:checked) span label:nth-of-type(2) {
+  background-color: var(--controls);
+ }
+
+
+/* 21:00 */
+@container style(--timeofday >= 21) {
+/* window */
+div:nth-of-type(1)>div:nth-of-type(1) {
+ background: var(--nacht);
+ 
+}
+
+html:has([value="clouds"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div {
+  display:block;}
+
+
+  /* sun color */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+opacity: 0;
+}
+
+/* cloud delen donkerder bij nacht */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div {
+  filter: brightness(0.6);
+}
+/* onderste wolkdeel */
+div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  background: linear-gradient(#ffffff, #767982);
+}
+
+}
+
+/* zon feller bij power */
+html:has([value="power"]:checked)   div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  filter: brightness(1.5);
+  transition: 1s;
+  filter: blur(1px);
+
+}
+
+/* power wordt roze bij checked */
+html:has([value="power"]:checked) span label:nth-of-type(3){
+background: var(--controls);
+
+}
+
+
+
+
+html:has([value="power"]:checked):root {
+--zonopkomst: linear-gradient(to top, oklch(0.85 0.12 26), oklch(0.95 0.05 33), oklch(0.92 0.18 243));
+--ochtend: linear-gradient(to top, oklch(0.90 0.23 196), oklch(0.75 0.30 218));
+--middag: linear-gradient(to top, oklch(0.74 0.21 199), oklch(0.66 0.27 217));
+--namiddag: linear-gradient(to top, oklch(0.88 0.15 34), oklch(0.83 0.22 38), oklch(0.82 0.18 342));
+--avond: linear-gradient(to top, oklch(0.85 0.20 27), oklch(67.673% 0.19959 29.56), oklch(0.45 0.23 302));
+--nacht: linear-gradient(to top, oklch(0.03 0.02 245), oklch(0.05 0.04 245), oklch(0.08 0.05 237), oklch(0.15 0.10 223), oklch(0.27 0.13 221));
+}
+
+
+
+
+
+/* panelkleur */
+html:has([value="goldenhour"]:checked) body > div:first-of-type {
+  background-color: oklch(27.776% 0.04366 33.303);
+  box-shadow: 0 0 2em oklch(69.276% 0.20404 40.696 / 0.5) ;
+
+}
+
+/* zon en kleur */
+html:has([value="goldenhour"]:checked)   div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  filter: brightness(2);
+  transition: 1s;
+ filter: blur(5px);
+    box-shadow: 0 0 3em oklch(67.166% 0.22051 37.853) ;
+    background: oklch(87.321% 0.07261 45.178); 
+    transform: translateX(-50%) scale(1.5);
+
+
+}
+
+/* zonpositie */
+html:has([value="goldenhour"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1) {
+  bottom: 2em;
+  transition: 1s;
+
+}
+/* goldenhour gradient */
+html:has([value="goldenhour"]:checked) div:nth-of-type(1)>div:nth-of-type(1) {
+background: linear-gradient(
+  to top,
+  oklch(75% 0.18 75),   /* diepe gouden horizon */
+  oklch(70% 0.20 55),   /* warm oranje */
+  oklch(64% 0.21 30),   /* sunset rood/oranje */
+  oklch(58% 0.19 10),   /* roze */
+  oklch(45% 0.16 300)   /* diepe paarsblauwe lucht */
+);
+  background-size: 100% 250%;
+animation: goldenhourSky 3s ease-in-out infinite alternate;
+ }
+
+
+@keyframes goldenhourSky {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 0% 70%;
+  }
+  100% {
+    background-position: 0% 40%;
+  }
+}
+
+
+html:has([value="goldenhour"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
+  /* onderste wolkdeel gradient */
+ 
+  background: linear-gradient(oklch(77.236% 0.09984 19.549), oklch(66.766% 0.17128 41.686));
+}
+
+
+
+/* range slider kleur */
+ html:has([value="goldenhour"]:checked) label {
+  accent-color:oklch(67.166% 0.22051 37.853)}
+
+  /* span controls kleur */
+ html:has([value="goldenhour"]:checked) span label {
+  background-color:    lch(59.11% 94.34 47.63 / 0.356)
+ }
+
+ /* alle cloud delen */
+ html:has([value="goldenhour"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div {
+  background: oklch(77.236% 0.09984 19.549);
+    filter: blur(2px);
+}
+
+/* range slider kleur */
+ html:has([value="goldenhour"]:checked) label:nth-of-type(1) {
+  padding: 0.5.1em;
+ opacity: 0;}
+ 
+ /* stars knop opacity 1 */
+  html:has([value="goldenhour"]:checked) span label:nth-of-type(1) {
+ opacity: 1;}
+
+
+@media (prefers-color-scheme: light) {
+    html:has([value="goldenhour"]:checked) body > div:first-of-type{
+ 
+ background-color:oklch(67.166% 0.22051 37.853 / 0.271)}
+;
+
+  }
+}
