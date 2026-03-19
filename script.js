@@ -13,3 +13,8 @@ ranges.forEach(range => {
 		updateRange(range)
 	};
 });
+
+
+
+// Code uit workshop range style query, toegepast
+// https://codepen.io/pderode/pen/vEXyWZy

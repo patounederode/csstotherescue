@@ -12,81 +12,92 @@
   <div>
     <!-- <h1>Sunrise & Sunset Panel</h1> -->
 
-  
+
 
     <main>
 
       <div> <!-- witte background panel -->
 
-           <div> <!--WINDOW-->
+        <div> <!--WINDOW-->
 
-                <div></div> <!--Sun-->
+          <h1>
+            <span>G</span><span>O</span><span>L</span><span>F</span><span>T</span>
+          </h1>
 
-                       <div> <!--Clouds-->
-                           <div></div><!--Clouds-->
-                               <div></div><!--Clouds-->
-                            <div></div><!--Clouds-->
-                        </div><!--Clouds-->
+          <div></div> <!--Sun-->
 
-                       <div><!--Stars-->
-                           <img src="images/stars.webp" alt="stars">
-                      </div> <!--Stars-->
-          
-            </div><!--WINDOW-->
+          <div> <!--Clouds-->
+            <div></div><!--Clouds-->
+            <div></div><!--Clouds-->
+            <div></div><!--Clouds-->
+          </div><!--Clouds-->
+
+          <div><!--plane-->
+
+            <img src="images/☾.png" alt="">
+
+          </div> <!--plane-->
+
+        </div><!--WINDOW-->
 
       </div><!-- panel -->
 
- <!-- controls -->
-<label>
-  6:00 
-  <input 
-      type="range" 
-      value="12" 
-      min="6" 
-      max="21" 
-      list="time-ticks" 
-      name="timeofday"> 
-   21:00
-</label>
+      <!-- controls -->
 
-<datalist id="time-ticks">
-  <option value="6">6:00</option>
-    <option value="9">9:00</option>
-  <option value="12">12:00</option>
-    <option value="15">15:00</option>
-  <option value="18">18:00</option>
-  <option value="21">21:00</option>
-</datalist>
 
-   <span>
-    
-        <label>
-          Stars
-        <input type="checkbox" value="stars">
-      </label>
 
-       <label>
-        Cloud
-      <input type="checkbox" value="clouds">
-      </label>
+
 
       <label>
-        Power
-        <input type="checkbox" value="power">
+        6:00
+        <input type="range" value="12" min="6" max="21" list="time-ticks" name="timeofday">
+        21:00
       </label>
 
-    </span>
+      <datalist id="time-ticks">
+        <option value="6">6:00</option>
+        <option value="9">9:00</option>
+        <option value="12">12:00</option>
+        <option value="15">15:00</option>
+        <option value="18">18:00</option>
+        <option value="21">21:00</option>
+      </datalist>
 
-<label>
-  Golden Hour
-  <input type="checkbox" value="goldenhour">
-</label>
+
+
+      <span>
+
+        <label>
+          Plane
+          <input type="checkbox" value="plane">
+        </label>
+
+        <label>
+          Cloud
+          <input type="checkbox" value="clouds">
+        </label>
+
+        <label>
+          Color Boost
+          <input type="checkbox" value="power">
+        </label>
+
+      </span>
+
+
       
+      <label>
+        Golden Hour
+        <input type="checkbox" value="goldenhour">
+      </label>
+
+
+
 
   </div>
 
   </main>
 
 
-		<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>

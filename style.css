@@ -164,6 +164,7 @@ div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(3) {
 @media (width > 40em) {
 
 
+
 /* onderste wolkdeel */
 div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div:nth-child(1) {
   top: 4em;
@@ -317,13 +318,13 @@ body{
 }
 
 
-/* sterren img */
-img {
-  display: none;
+/* moon img */
+main img {
+display: none;
 }
 
 
-/* stars */
+/* stars
 html:has([value="stars"]:checked) img {
   display: block;
   justify-self: center;
@@ -333,7 +334,7 @@ html:has([value="stars"]:checked) img {
 html:has([value="stars"]:checked) span label:nth-of-type(1){
   background-color: var(--controls);
 
-}
+} */
 
 /* clouds uit */
 html:has([value="clouds"]:checked) div:nth-of-type(1) > div:nth-of-type(1)>div:nth-of-type(2)>div {
@@ -484,10 +485,17 @@ html:has([value="clouds"]:checked) span label:nth-of-type(2) {
 
 /* 21:00 */
 @container style(--timeofday >= 21) {
+  /* moon img */
+  main img {
+    display: block;
+    padding-top: 2em;
+    justify-self: center;
+    width: 6em;
+    opacity: 0.6;
+  }
 /* window */
 div:nth-of-type(1)>div:nth-of-type(1) {
  background: var(--nacht);
- 
 }
 
 html:has([value="clouds"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>div {
@@ -523,6 +531,8 @@ html:has([value="power"]:checked) span label:nth-of-type(3){
 background: var(--controls);
 
 }
+
+
 
 
 
@@ -626,6 +636,14 @@ html:has([value="goldenhour"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div
  opacity: 1;}
 
 
+
+ /* moon img */
+  html:has([value="goldenhour"]:checked) main img {
+  display: none;
+  
+}
+
+
 @media (prefers-color-scheme: light) {
     html:has([value="goldenhour"]:checked) body > div:first-of-type{
  
@@ -633,3 +651,75 @@ html:has([value="goldenhour"]:checked) div:nth-of-type(1)>div:nth-of-type(1)>div
 ;
 
   }
+
+
+
+
+
+
+  h1  {
+    display: none;
+  }
+
+
+/* titel animatie */
+  /* html:has([value="plane"]:checked) h1 {
+z-index: 1;
+  color:  oklch(100% 0.00011 271.152 / 0.659);
+  text-shadow: 
+    0 0 10px #FFB347,  
+    0 0 20px oklch(64% 0.21 30), 
+    0 0 40px oklch(64% 0.21 30),
+     0 0 40px oklch(58% 0.19 10);  
+    filter: blur(0.2);
+  display: block;
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  
+} */
+
+
+h1 {
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #0077cc;
+  white-space: nowrap;
+}
+
+h1 span {
+  display: inline-block;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+/* Maak een kleine delay per letter voor golf effect */
+h1 span:nth-child(1) { animation-delay: 0s; }
+h1 span:nth-child(2) { animation-delay: 0.1s; }
+h1 span:nth-child(3) { animation-delay: 0.2s; }
+h1 span:nth-child(4) { animation-delay: 0.3s; }
+h1 span:nth-child(5) { animation-delay: 0.4s; }
+/* Voeg meer regels toe afhankelijk van het aantal letters */
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+
+
+/* 
+@keyframes wave {
+  0%   { transform: translateX(-100%) translateY(0px) rotate(0deg); }
+  10%  { transform: translateX(-80%) translateY(-10px) rotate(-5deg); }
+  20%  { transform: translateX(-60%) translateY(8px) rotate(4deg); }
+  30%  { transform: translateX(-40%) translateY(-6px) rotate(-3deg); }
+  40%  { transform: translateX(-20%) translateY(4px) rotate(2deg); }
+  50%  { transform: translateX(0%) translateY(-3px) rotate(-2deg); }
+  60%  { transform: translateX(20%) translateY(2px) rotate(1deg); }
+  70%  { transform: translateX(40%) translateY(-1px) rotate(-1deg); }
+  80%  { transform: translateX(60%) translateY(0px) rotate(0deg); }
+  100% { transform: translateX(100%) translateY(0px) rotate(0deg); }
+} */
