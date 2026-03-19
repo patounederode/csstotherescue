@@ -166,3 +166,4 @@ Mode range style query:
 https://codepen.io/pderode/pen/vEXyWZy
 https://codepen.io/pderode/pen/yyaVPeq
 
+bron wavy animatie: https://codepen.io/zachkrall/pen/MWWGMPx 
